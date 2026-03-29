@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<!-- NAVBAR -->
+<div class="navbar">
+  <h2 class="logo">Expense Tracker</h2>
+
+  <div id="navButtons">
+    <button onclick="showLogin()">Login</button>
+    <button onclick="showRegister()">Register</button>
+  </div>
+
+  <div id="navLogout" class="hidden">
+    <button onclick="logout()">Logout</button>
+  </div>
+</div>
+<div id="toast"></div>
+<body>
+<div class="main-container">
+  <!-- HOME PAGE -->
+<div id="homePage" class="container">
+  <h2>Welcome 💰</h2>
+  <p style="text-align:center; margin:10px 0;">
+    Track your daily expenses easily and efficiently.
+  </p>
+</div>
+<!-- REGISTER -->
+<div id="registerContainer" class="container hidden">
+  <h2>Register</h2>
+  <input type="text" id="name" placeholder="Name">
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="register()">Register</button>
+  <p>Already have account? <a href="#" onclick="showLogin()">Login</a></p>
+</div>
+
+<!-- LOGIN -->
+<div id="loginContainer" class="container hidden">
+  <h2>Login</h2>
+  <input type="email" id="loginEmail" placeholder="Email">
+  <input type="password" id="loginPassword" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <p>New user? <a href="#" onclick="showRegister()">Register</a></p>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="container hidden">
+  <h2>💰 Expense Tracker</h2>
+
+  <h3>Add Expense</h3>
+  <input type="number" id="amount" placeholder="Amount">
+  <input type="date" id="date">
+  <input type="text" id="desc" placeholder="Description">
+
+  <select id="category">
+    <option value="1">🍔 Food</option>
+    <option value="2">🚗 Travel</option>
+    <option value="3">🛍️ Shopping</option>
+    <option value="4">💡 Bills</option>
+<option value="5">📚 Fee</option>
+  </select>
+
+  <button onclick="addExpense()">➕ Add Expense</button>
+
+  <h3>📊 My Expenses</h3>
+  <button onclick="getExpenses()">🔄 Load Expenses</button>
+
+  <ul id="expenseList"></ul>
+  <button onclick="logout()">🚪 Logout</button>
+</div>
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>

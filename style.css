@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* BODY CENTERING */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* MAIN WRAPPER (HOLDS ALL SECTIONS) */
+.main-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD DESIGN (LOGIN / REGISTER / DASHBOARD) */
+.container {
+  width: 350px;
+  max-width: 90%;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  animation: fadeIn 1.0s ease;
+  transition: 0.3s;
+}
+
+/* HEADINGS */
+h2, h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* INPUTS */
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+
+input:focus, select:focus {
+  border-color: #667eea;
+  outline: none;
+  box-shadow: 0 0 5px rgba(102,126,234,0.5);
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* LINKS */
+a {
+  color: #667eea;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* EXPENSE LIST */
+ul {
+  list-style: none;
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* EACH EXPENSE CARD */
+li {
+  background: #f5f7fb;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideUp 0.3s ease;
+  transition: 0.3s;
+}
+
+li:hover {
+  background: #eef1ff;
+}
+
+/* ACTION BUTTONS */
+.actions {
+  display: flex;
+  gap: 5px;
+}
+
+.actions button {
+  width: auto;
+  padding: 5px 8px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
+/* HIDE ELEMENT */
+.hidden {
+  display: none;   /* ✅ FIXED (important) */
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* NAVBAR */
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  color: white;
+}
+
+.navbar button {
+  width: auto;
+  margin-left: 10px;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+.edit-box {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+}
+#toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #100d0d;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: 1.os;
+  z-index: 999;
+}
+
+#toast.show {
+  opacity: 1;
+}

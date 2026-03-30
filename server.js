@@ -216,5 +216,5 @@ app.put("/update-expense/:id", verifyToken, (req, res) => {
 });
 // Start server
 app.listen(5000, () => {
-  console.log("Server running on http://localhost:5000");
+  console.log("Server running on https://expense-tracker-backend.onrender.com");
 });

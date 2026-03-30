@@ -22,8 +22,7 @@ app.use(cors());
 app.use(express.json());
 
 const SECRET_KEY = "mysecretkey";
-
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
@@ -215,6 +214,6 @@ app.put("/update-expense/:id", verifyToken, (req, res) => {
   });
 });
 // Start server
-app.listen(5000, () => {
+app.listen(10000, () => {
   console.log("Server running on https://expense-tracker-backend-fi1y.onrender.com");
 });

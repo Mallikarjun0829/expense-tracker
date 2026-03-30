@@ -39,7 +39,7 @@ function register() {
     password: document.getElementById("password").value
   };
 
-  fetch("https://expense-tracker-backend.onrender.com/register", {
+  fetch("https://expense-tracker-backend-fi1y.onrender.com/register", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify(data)
@@ -58,7 +58,7 @@ function login() {
     return;
   }
 
-  fetch("https://expense-tracker-backend.onrender.com/login", {
+  fetch("https://expense-tracker-backend-fi1y.onrender.com/login", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({ email, password })
@@ -89,7 +89,7 @@ function addExpense() {
     description: document.getElementById("desc").value
   };
 
-  fetch("https://expense-tracker-backend.onrender.com/add-expense", {
+  fetch("https://expense-tracker-backend-fi1y.onrender.com/add-expense", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -103,7 +103,7 @@ function addExpense() {
 function getExpenses() {
   const token = localStorage.getItem("token");
 
-  fetch("http://localhost:5000/expenses", {
+  fetch("https://expense-tracker-backend-fi1y.onrender.com/expenses", {
     headers: {
       "Authorization": token
     }
@@ -140,7 +140,7 @@ function getExpenses() {
     });
 }
 function deleteExpense(id) {
-  fetch(`https://expense-tracker-backend.onrender.com/delete-expense/${id}`, {
+  fetch(`https://expense-tracker-backend-fi1y.onrender.com/delete-expense/${id}`, {
     method: "DELETE",
     headers: {
       "Authorization": localStorage.getItem("token")
@@ -156,7 +156,7 @@ function deleteExpense(id) {
 function updateExpense(id) {
   const amount = document.getElementById(`amount-${id}`).value;
 
-  fetch(`https://expense-tracker-backend.onrender.com/update-expense/${id}`, {
+  fetch(`https://expense-tracker-backend-fi1y.onrender.com/update-expense/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -181,7 +181,7 @@ function cancelEdit(id) {
   document.getElementById(`view-${id}`).classList.remove("hidden");
 }
 function loadExpenses() {
-  fetch("https://expense-tracker-backend.onrender.com/expenses", {
+  fetch("https://expense-tracker-backend-fi1y.onrender.com/expenses", {
     headers: {
       "Authorization": localStorage.getItem("token")
     }
